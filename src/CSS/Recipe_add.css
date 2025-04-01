@@ -1,0 +1,92 @@
+.p-dropdown {
+ 
+    background-color: #F6F8FA;
+    padding: 10px;
+    border-radius: 16px;
+    width: 8vw;
+    text-align: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    margin-left: 1vw;
+    line-height: 0.99;
+}
+.p-dropdown-items-wrapper {
+    height: 8vh;
+    background-color: #F6F8FA;
+}
+.p-dropdown-item{
+    background-color: #FFFFFF;
+    margin-top: 5px !important;
+    border-radius: 16px;
+    width: 80%;
+    margin: auto;
+
+}
+.p-dropdown-items {
+    text-align: center;
+}
+.Recipe_item_row > div {
+    display:inline-block
+}
+input {
+    background-color: #F6F8FA;
+    border: transparent;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 16px;
+    margin-left: 1vw;
+    padding: 10px;
+    text-align: center;
+    width: 7vw;
+    box-sizing: border-box;
+}
+.Recipe_item_row {
+    margin-top: 1vh;
+}
+.Recipe_ingeridents_coat {
+    width: 30vw;
+    margin: auto;
+    height: 30.5vh;
+    text-align: center;
+    overflow: scroll;
+    background-color: #F6F8FA;
+    border-radius: 16px;
+}
+.add_button {
+    background-color: #03882B;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 16px;
+    width: 7vw;
+    text-align: center;
+    padding: 10px;
+    margin-left: -16vw;
+    margin-top: 1vh;
+    box-sizing: border-box;
+    border: transparent;
+}
+.Recipe_item_row_button {
+    text-align: none;
+}
+textarea{
+    background-color: #F6F8FA;
+    border: transparent;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 16px;
+    padding: 10px;
+   font-size: x-large;
+    width: 30vw;
+    box-sizing: border-box;
+    display: block;
+    margin:auto;
+}
+.Procces_row {
+    margin-top: 1vh;
+}
+.Recipe_name_label {
+    width: 30vw;
+    text-align: left !important;
+    font-size: x-large;
+    display: block;
+    margin:auto;
+}
+.Recipe_item_row_full {
+    margin-top: 1vh;
+}

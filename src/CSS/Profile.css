@@ -1,0 +1,83 @@
+.Profile {
+    background-color: #D9B99B;
+    display: inline-block;
+    width: 20vw;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.Profile_name {
+    text-align: center;
+    font-size: x-large;
+    line-height: 0.8;
+    background-color: #D9B99B;
+}
+.Profile_main_container {
+    margin-top :  8vh !important ; 
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+    align-items: flex-start;
+}
+
+.register-form  > input {
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 64px ;  
+    margin-top: 2vh;  
+    width: 25vw;
+}
+
+.login-form  > input {
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 64px ;
+    margin-top: 2vh;    
+    width: 25vw;
+}
+
+.login-form  > button {
+    background-color: #123329;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: white;
+    width: 25vw;
+    font-size: 64px;
+    line-height: 0.8;
+    min-height: 80px;
+    margin-top: 2vh;  
+}
+
+.register-form  > button {
+    background-color: #331212;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: white;
+    width: 25vw;
+    font-size: 64px;
+    line-height: 0.8;
+    min-height: 80px;
+    margin-top: 2vh;  
+}
+
+.login-form {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+.register-form {
+    margin-left: 1vw;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+.Profile_form_coat {
+    margin-left: 5vw;
+    margin-top: 8vh;
+
+}
