@@ -5,7 +5,7 @@ function Recipe_timer_overview(props) {
     return (
       <>
           <div className="Timer"> 
-              <p>{props.time}</p>
+              <p>{props.time}:00</p>
           </div>
       </>
     )

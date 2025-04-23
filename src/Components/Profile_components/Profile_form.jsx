@@ -9,7 +9,7 @@ function Profile_form(props) {
       <>
 
         <div className="Profile_form_coat">
-            <Login_form/>
+            <Login_form Name_set={props.Name_set}/>
             <Register_form/>
         </div>
       </>

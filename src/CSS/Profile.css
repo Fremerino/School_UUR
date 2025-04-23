@@ -21,6 +21,8 @@
     flex-wrap: wrap;
     background-color: rgb(255, 255, 255);
     align-items: flex-start;
+    height: 45%;
+    position: relative;
 }
 
 .register-form  > input {
@@ -81,3 +83,6 @@
     margin-top: 8vh;
 
 }
+@media only screen and (max-width: 1880px) {
+
+  }

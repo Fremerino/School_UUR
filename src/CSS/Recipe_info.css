@@ -38,7 +38,7 @@ flex-direction: column;
     margin: auto;
     height: 8.5vh;
     line-height: 1.0;
-    font-size: 96px;
+    font-size: 8vh;
     text-align: center;
     overflow: scroll;
 }
@@ -51,7 +51,29 @@ flex-direction: column;
     height: 53.5vh;
     text-align: center;
     overflow: scroll;
+    position: relative;
 }
 h1 {
     text-align: center;
+}
+.button_is_it_ready
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 1.55vh;
+}
+.check_img {
+    width: 60%;
+    height: 60%;
+}
+.ingredients_row {
+    width: 90%;
 }

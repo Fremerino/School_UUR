@@ -5,6 +5,7 @@ function Recipe_process(props) {
       <>
         <div className="Process_main_div">
             <h1>Process</h1>
+            <p>{props.text}</p>
         </div>
       </>
     )

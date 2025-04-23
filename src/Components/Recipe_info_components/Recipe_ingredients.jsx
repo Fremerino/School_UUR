@@ -1,5 +1,5 @@
 import Generic_label from "../Generic/Generic_label";
-
+import Recipe_info_check_button from "./Recipe_info_check_button"
 
 function Recipe_ingredients(props) {
     const colorItems = [];
@@ -36,7 +36,7 @@ function Recipe_ingredients(props) {
         borderRadius: 16,
         border : "2px solid black",       
         padding: "20px",
-        width: "4vw",
+        width: "5vw",
         boxSizing: "border-box",
         fontSize: "large",
         textAlign: "center",
@@ -46,9 +46,15 @@ function Recipe_ingredients(props) {
         };
 
 
-    for (let i = 0; i < 10; i++) {
+
+    for (let i = 0; i < props.ingredience.length; i++) {
         colorItems.push(
-            <div>   <Generic_label style_definition={first_collumn} text="Jahoda"> </Generic_label> <Generic_label style_definition={second_collumn} text="20" >  </Generic_label> <Generic_label style_definition={third_collumn} text="G" >  </Generic_label> </div>
+            <div className="ingredients_row">   
+              <Generic_label style_definition={first_collumn} text={props.ingredience[i].NAME}> </Generic_label> 
+              <Generic_label style_definition={second_collumn} text={props.ingredience[i].COUNT} > </Generic_label> 
+              <Generic_label style_definition={third_collumn} text={props.ingredience[i].UNIT} >  </Generic_label> 
+              <Recipe_info_check_button></Recipe_info_check_button>
+            </div>
         );
 
     }

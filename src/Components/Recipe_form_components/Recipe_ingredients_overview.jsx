@@ -6,11 +6,12 @@ import Recipe_ingredients_row from "./Recipe_ingredients_row";
 import Recipe_ingredients_add_button from "./Recipe_ingredients_add_button";
 import { useState } from "react";
 function Recipe_ingredients_overview(props) {
+    
 
-    const [rows, setRows] = useState([<Recipe_ingredients_row/>]);
+    const [rows, setRows] = useState([<Recipe_ingredients_row setIngredients={props.setIngredients} key={0} identifikator={0}/>]);
 
     const handleAddRow = () => {
-        setRows(prev => [...prev, <Recipe_ingredients_row/>]);
+        setRows(prev => [...prev, <Recipe_ingredients_row setIngredients={props.setIngredients} key={rows.length} identifikator={rows.length} />]);
     };
 
     const styler = {

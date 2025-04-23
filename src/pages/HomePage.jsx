@@ -1,12 +1,11 @@
 import Header from "../Components/Header"
-import Controller from "../Components/Controller/Controller"
-
+import main_img from "../assets/main_page.png"
 function HomePage(){
     return (
         <>
-        <Controller/>
+        
         <Header page_active="Home"/>
-        <img src="../assets/main_page.png" alt="xd"/>
+        <img src={main_img} alt="xd" class="main_img"/>
         </>
     )
 }

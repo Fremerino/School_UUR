@@ -16,8 +16,36 @@ function Register_form(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically send the data to your backend
-        console.log("Registering with:", formData);
+        const sendData = async () => {
+            const data = { 
+                name: formData.name,
+                password: formData.password
+            };
+
+            
+            
+            try {
+                const response = await fetch('http://localhost/my-app/src/Model/Send.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+            
+                if (!response.ok) {
+                    throw new Error('Nastala chyba při odesílání dat');
+                }
+            
+                const result = await response.json();
+                console.log('Úspěch:', result);
+                alert('Data byla úspěšně odeslána!');
+            } catch (error) {
+                console.error('Chyba:', error);
+                alert('Došlo k chybě při odesílání dat.');
+            }
+        };
+        sendData();
     };
 
     return (

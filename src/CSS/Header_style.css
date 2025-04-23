@@ -7,12 +7,76 @@
 #header_buttons {
     top: 4vh;
     position: absolute;
-    width: 45vw;
+    width: 50%;
     right: 0%;
     padding-right: 10px;
+    text-align: center;
 }
 .logo {
-    width: 10vw;
+    width: 10%;
     position: relative;
     top: 2vh;
 }
+@media only screen and (max-width: 1260px) {
+    #header_buttons {
+        top: 4vh;
+        position: absolute;
+        width: 60vw;
+        right: 0%;
+        padding-right: 10px;
+        
+    }
+    .logo {
+        width: 20%;
+        position: relative;
+        top: 15%;
+    }
+    .router_buttons {
+        font-size: 3vh;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+  }
+  @media only screen and (max-width: 770px) {
+    #header_buttons {
+        top: 4vh;
+        position: absolute;
+        width: 77vw;
+        right: 0%;
+    }
+    .logo {
+        width: 20%;
+        position: relative;
+        top: 20%;
+    }
+}
+    @media only screen and (max-width: 600px) {
+        #header_buttons {
+            top: 4vh;
+            position: absolute;
+            width: 90%;
+            right: 0%;
+            margin: auto;
+            top: 30%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .logo {
+            width: 20%;
+            position: relative;
+            top: 20%;
+        }
+        .router_buttons {
+            font-size: 2.8vh;
+            padding-left: 4%;
+            padding-right: 4%;
+            width: 22%;
+            display: inline-block;
+            text-align: center;
+            
+        }
+        .logo {
+            display:none;
+        }
+  }

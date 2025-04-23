@@ -1,6 +1,6 @@
 import ref_image from "../../assets/profile_ref.webp"
-
-
+import Cookies from 'js-cookie';
+import { useState } from "react";
 function Profile_img(props) {
 
   
@@ -8,7 +8,7 @@ function Profile_img(props) {
       <>
           <div className="Profile"> 
               <img src={ref_image} alt="profile_image"/>
-              <p className="Profile_name"> xxx {props.name} </p>
+              <p className="Profile_name"> {props.name} </p>
           </div>
       </>
     )

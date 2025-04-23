@@ -12,8 +12,8 @@ import Profile from './pages/Profile.jsx'
 import Recipe_form from './pages/Recipes_form.jsx'
 import Recipe_info from './pages/Recipe_info.jsx'
 import Recipes from './pages/Recipes.jsx'
-import NotFound from './pages/Notfound.jsx'
-
+import NotFound from './pages/NotFound.jsx'
+import { CookiesProvider, useCookies } from 'react-cookie'
 const router = createBrowserRouter([
 {
   path: '/',
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   element: <Recipe_form/>,
 },
 {
-  path: '/Recipe_info',
+  path: '/Recipe_info/:id',
   element: <Recipe_info/>,
 },
 {
@@ -42,6 +42,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <CookiesProvider>
      <RouterProvider router={router}/>
+    </CookiesProvider>
   </StrictMode>
 )
