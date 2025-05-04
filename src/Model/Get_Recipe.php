@@ -23,8 +23,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-$sql = "SELECT ID, NAME, Image, TEXT, TIMER, ID_PERSON FROM recepty WHERE ID = '{$data['id']}'";
+$sql = "SELECT ID, NAME, TEXT,Image,TIMER, ID_PERSON FROM recepty WHERE ID = '{$data['id']}'";
 $result = $conn->query($sql);
+
+ 
 
 if ($result->num_rows > 0) {
   $row = $result->fetch_assoc();
@@ -32,9 +34,10 @@ if ($result->num_rows > 0) {
   $ingredience = $conn->query($sql2);
   $ingredience_response = array();
   while ($ingredience_row = $ingredience->fetch_assoc()) {
+    
     array_push($ingredience_response,$ingredience_row);
   }
-
+  $row['Image'] = base64_encode($row['Image']);
   echo json_encode([$row["ID"], $row["NAME"], $row["Image"], $row["TEXT"], $row["TIMER"], $row["ID_PERSON"], $ingredience_response]);
 }
 else {

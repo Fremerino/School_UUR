@@ -3,6 +3,7 @@ import "../CSS/Recipe_info.css"
 import Recipe_name from "../Components/Recipe_info_components/Recipe_name"
 import Recipe_ingredients from "../Components/Recipe_info_components/Recipe_ingredients"
 import Recipe_process from "../Components/Recipe_info_components/Recipe_process"
+import Timer_box from "../Components/Recipe_info_components/Timer/Timer_box"
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -66,6 +67,7 @@ function Recipe_info(){
             <Recipe_process text={data[3]}/>
             </div>
         </div>
+        <Timer_box/>
         </>
     )
 }

@@ -54,10 +54,10 @@ input {
     background-color: #03882B;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 16px;
-    width: 7vw;
+    width: 12vw;
     text-align: center;
     padding: 10px;
-    margin-left: -16vw;
+    margin-left: -14vw;
     margin-top: 1vh;
     box-sizing: border-box;
     border: transparent;
@@ -147,4 +147,52 @@ textarea{
     box-sizing: border-box;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     font-size: 1.5vw;
+}
+.Name_input {
+    width: 12vw !important;
+}
+.Quantity_input {
+    width: 5vw !important;
+}
+
+@media only screen and (max-width: 1600px) {
+    label {
+        font-size: medium  !important;
+        
+    }
+    input {
+        padding: 6px !important;
+    }
+    .p-dropdown {
+        padding: 6px !important;
+    }
+    .add_button {
+        padding: 6px !important;
+    }
+
+
+}
+
+@media only screen and (max-width: 2000px) {
+    label {
+        font-size: medium  !important;
+        
+    }
+    .recipe_form_coat {
+        height: 75vh;
+    }
+    
+
+}
+@media only screen and (max-width: 1410px) {
+    label {
+        font-size:small !important;
+        
+    }
+    .recipe_form_coat {
+        height: 80vh;
+
+    }
+    
+
 }

@@ -1,14 +1,10 @@
 
 function Recipe_delete_button(props) {
 
-    function RemoveT()
-    {
-        props.delete(0)
-    }
 
     return (
       <>
-        <button onClick={RemoveT} >X</button>
+        <button onClick={props.handleRemove} >X</button>
       </>
     )
   }

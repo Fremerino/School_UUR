@@ -23,9 +23,30 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     file_put_contents('./postdata.txt', $data["name"]);
     $name = $data["name"];
     $password = $data['password'];
-    $sql = "INSERT INTO people (NAME,PASSWORD) VALUES ('{$name}','{$password}')";
+    $user_already_exists = false;
+    $sql = "SELECT NAME FROM people";
     $result = $conn->query($sql);
-    echo json_encode(["success"]);
+    if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        if($row["NAME"]==$name)
+        {
+          $user_already_exists = true;
+          
+        }
+      }
+    }
+    if(!$user_already_exists)
+    {
+      $sql = "INSERT INTO people (NAME,PASSWORD) VALUES ('{$name}','{$password}')";
+      $result = $conn->query($sql);
+      echo json_encode(["success"]);
+      
+    }
+    else 
+    {
+      echo json_encode(["User exists"]);
+    }
+    $conn->close();
 }
 
 

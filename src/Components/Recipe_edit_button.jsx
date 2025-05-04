@@ -6,7 +6,7 @@ function Recipe_edit_button(props) {
 
     return (
       <>
-        <Link to="/Recipe_form"><img src={icon} alt="edit" /></Link>
+        <Link to={`/Recipe_form/${props.id}`}><img src={icon} alt="edit"/></Link>
       </>
     )
   }

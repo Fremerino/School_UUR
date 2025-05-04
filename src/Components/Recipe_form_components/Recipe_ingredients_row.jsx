@@ -10,6 +10,16 @@ function Recipe_ingredients_row(props) {
     quantity: "",
     unit: ""
   });
+  const[data_quant,setData_quant] = useState("");
+  if(props.Ingredients)
+  { 
+  useEffect(() => {
+    setData({"nameR":props.Ingredients["NAME"],"quantity":props.Ingredients["COUNT"],"unit":props.Ingredients["UNIT"]})
+  },[]);
+  }
+
+
+
   function IngridentHandler(e)
   {
     if(e.target.name=="Name")
@@ -23,10 +33,21 @@ function Recipe_ingredients_row(props) {
     else {
       if(e.target.name=="Quantity")
       {
-        setData(prev => ({
-          ...prev,
-          "quantity": e.target.value
-      }));
+        const value = e.target.value.trim();
+        if(parseInt(value)>=0 || value=="")
+        {
+          setData_quant(e.target.value)
+          console.log(parseInt(value)>0)
+          setData(prev => ({
+            ...prev,
+            "quantity": e.target.value
+        }));
+        }
+        else 
+        {
+
+        }
+        
       }
       else {
         setData(prev => ({
@@ -37,19 +58,32 @@ function Recipe_ingredients_row(props) {
     }
     
   }
+  function IngredientHandler2(e)
+  {
+    setData(prev => ({
+      ...prev,
+      "unit": e.name
+  }));
+  }
+
+
+
+
   useEffect(() => {
     props.setIngredients(prev => ({
       ...prev,
-      [props.identifikator]: data
+      [props.identifikator]: data  
   }));
   }, [data]);
+
+
 
   return (
     <>
     <div className="Recipe_item_row"> 
-        <input name="Name" onChange={IngridentHandler} required/> 
-        <input name="Quantity"onChange={IngridentHandler} required/>
-        <Dropdown_component setData={IngridentHandler}/>
+        <input name="Name" onChange={IngridentHandler} required placeholder="Name" value={data["nameR"]} className="Name_input"/> 
+        <input name="Quantity" onChange={IngridentHandler} required placeholder="Quantity" value={data["quantity"]}  className="Quantity_input"/>
+        <Dropdown_component setData1={IngredientHandler2} setData={IngridentHandler} unit={data["unit"]}/>
     </div>
     </>
   )

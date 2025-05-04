@@ -8,7 +8,7 @@ function Recipes(){
     const colorItems = [];
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
-  
+    console.log("xxxx"+Cookies.get("ID"));
     useEffect(() => {
       fetch("http://localhost/my-app/src/Model/Main.php")
         .then((response) => {
@@ -38,15 +38,24 @@ function Recipes(){
     }, []);
 
     if (error) return <div>Error: {error}</div>;
-    if (!data) return <div>Loading...</div>;
+  
 
  
-
-    return (
+    if(Cookies.get("ID") === undefined)
+    {
+      return (
         <>
         <Header page_active="Recipes"/>
-        <Recipe_page_controller data={data}/>
         </>
     )
+    }
+    else {
+      return (
+        <>
+        <Header page_active="Recipes"/>
+        <Recipe_page_controller data={data} />
+        </>
+    )
+    }
 }
 export default Recipes

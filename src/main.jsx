@@ -36,12 +36,18 @@ const router = createBrowserRouter([
   path: '/Recipes',
   element: <Recipes/>,
 },
+{
+  path: '/Recipe_form/:id',
+  element: <Recipe_form/>,
+},
+
 
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
     <CookiesProvider>
      <RouterProvider router={router}/>
     </CookiesProvider>
