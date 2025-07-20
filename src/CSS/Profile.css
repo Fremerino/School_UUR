@@ -1,11 +1,12 @@
 .Profile {
     background-color: #D9B99B;
     display: inline-block;
-    width: 20vw;
+    width: 25%;
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 .Profile_name {
     text-align: center;
@@ -39,6 +40,7 @@
     font-size: 64px ;
     margin-top: 2vh;    
     width: 25vw;
+    min-width: 200px;
 }
 
 .login-form  > button {
@@ -52,6 +54,7 @@
     line-height: 0.8;
     min-height: 80px;
     margin-top: 2vh;  
+    cursor: pointer;
 }
 
 .register-form  > button {
@@ -65,6 +68,7 @@
     line-height: 0.8;
     min-height: 80px;
     margin-top: 2vh;  
+    cursor: pointer;
 }
 
 .login-form {
@@ -83,6 +87,85 @@
     margin-top: 8vh;
 
 }
-@media only screen and (max-width: 1880px) {
-
+.Profile_img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    height: 90%;
+}
+@media only screen and (max-height: 960px) {
+.login-form > input {
+    font-size: 30px;
+}
+.register-form > input {
+    font-size: 30px;
+}
+.login-form > button {
+    font-size: 30px;
+    min-height: 60px;
+}
+.register-form > button {
+    font-size: 30px;
+    min-height: 60px;
+}
   }
+@media (max-width: 800px) {
+  .Profile {
+    background-color: #D9B99B;
+    width: 100%;
+}
+  .Profile_form_coat
+  {
+    margin: auto;
+    margin-top: 5vh;
+  }
+  .login-form > input {
+    font-size: 35px;
+}
+.register-form > input {
+    font-size: 35px;
+}
+.login-form > button {
+    font-size: 35px;
+    min-height: 60px;
+}
+.register-form > button {
+    font-size: 35px;
+    min-height: 60px;
+}
+}
+@media (max-width: 900px) {
+.login-form  {
+    display: block;
+}
+  .Profile {
+    background-color: #D9B99B;
+    width: 100%;
+}
+  .Profile_form_coat
+  {
+    margin: auto;
+    margin-top: 5vh;
+  }
+  .login-form > input {
+    margin-left: 0vw !important;
+        font-size: 30px;
+        width: 100% !important;
+  }
+  .login-form > button  {
+    font-size: 30px !important;
+    min-height: 60px !important;
+    width: 100% !important;
+  }
+   .register-form > input {
+    margin-left: 0vw !important;
+        font-size: 30px;
+        width: 100% !important;
+  }
+  .register-form > button  {
+    font-size: 30px !important;
+    min-height: 60px !important;
+    width: 100% !important;
+  }
+}

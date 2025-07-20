@@ -1,19 +1,48 @@
-.router_buttons {
-    background-color: #EED9C4;
-    border-radius: 50px;
-    text-decoration: none;
-    color:black;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size:2.1vw;
-    margin-left: 1.5vw;
-    box-shadow: 1.6px 3.2px 3.2px hsl(0deg 0% 0% / 0.45);
-    border: 2px solid transparent;
 
+#about_button {
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 23%;
+  margin-left: 21%;
 }
-a:hover {
-    border: 2px solid black;
+
+
+  @media only screen and (max-width: 1600px) {
+#about_button {
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  margin-left: 0%;
+  margin-top: 30%;
+  transform: translateX(-50%);
+}
+
+  }
+  @media only screen and (max-width: 850px) {
+#about_button {
+  margin-top: 45%;
+}
+  }
+  @media only screen and (max-width: 550px) {
+#about_button {
+  margin-top: 70%;
+}
+
 
 }

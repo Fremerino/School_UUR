@@ -7,7 +7,7 @@ function Profile_img(props) {
     return (
       <>
           <div className="Profile"> 
-              <img src={ref_image} alt="profile_image"/>
+              <img src={ref_image} alt="profile_image" className="Profile_img"/>
               <p className="Profile_name"> {props.name} </p>
           </div>
       </>

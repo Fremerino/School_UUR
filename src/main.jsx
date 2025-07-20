@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 
 import App from './App.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import Header from './Components/Header.jsx'
 
 import "./CSS/Basic.css"
 
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
   element: <Recipe_form/>,
 },
 {
-  path: '/Recipe_info/:id',
+  path: '/Recipe_info/:id/:isPublic',
   element: <Recipe_info/>,
 },
 {

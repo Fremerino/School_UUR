@@ -14,7 +14,7 @@ function Recipe_ingredients_row(props) {
   if(props.Ingredients)
   { 
   useEffect(() => {
-    setData({"nameR":props.Ingredients["NAME"],"quantity":props.Ingredients["COUNT"],"unit":props.Ingredients["UNIT"]})
+    setData({"nameR":props.Ingredients["nameR"],"quantity":props.Ingredients["quantity"],"unit":props.Ingredients["unit"]})
   },[]);
   }
 
@@ -34,10 +34,11 @@ function Recipe_ingredients_row(props) {
       if(e.target.name=="Quantity")
       {
         const value = e.target.value.trim();
-        if(parseInt(value)>=0 || value=="")
+        if(!isNaN(value) && !isNaN(parseFloat(value)) || value=="")
         {
+          
           setData_quant(e.target.value)
-          console.log(parseInt(value)>0)
+          
           setData(prev => ({
             ...prev,
             "quantity": e.target.value
@@ -81,8 +82,8 @@ function Recipe_ingredients_row(props) {
   return (
     <>
     <div className="Recipe_item_row"> 
-        <input name="Name" onChange={IngridentHandler} required placeholder="Name" value={data["nameR"]} className="Name_input"/> 
-        <input name="Quantity" onChange={IngridentHandler} required placeholder="Quantity" value={data["quantity"]}  className="Quantity_input"/>
+        <input name="Name" onChange={IngridentHandler} required placeholder="Name" value={data["nameR"]} className="Name_input" maxLength={25}/> 
+        <input name="Quantity" onChange={IngridentHandler} required placeholder="Quantity" value={data["quantity"]}  className="Quantity_input" maxLength={6}/>
         <Dropdown_component setData1={IngredientHandler2} setData={IngridentHandler} unit={data["unit"]}/>
     </div>
     </>

@@ -9,14 +9,14 @@ function Recipe_file_submit_row(props) {
   };
 
 
-    return (
-      <>
-            <div className="Recipe_file_submit_row">
-                <Generic_label  text="Picture" style_definition={styler} class="nametag_label"  />
-                <div className="File_overlay"> <input type="file" id="myFile" name="filename" className="file_button" onChange={(e)=>{props.setImage(e.target.files[0])}} accept="image/*" /> </div>
-                <input type="submit" value="Submit" className="submit_button" />
-            </div>   
-      </>
-    )
-  }
+  return (
+    <>
+          <div className="Recipe_file_submit_row">
+              <Generic_label  text="Picture" style_definition={styler} class="nametag_label"  />
+              <div className="File_overlay"> <input type="file" id="myFile" name="filename" className="file_button" onChange={(e)=>{props.setImage(e.target.files[0])}} accept="image/*" />  </div>
+              <input type="submit" value="Submit" className="submit_button" />
+          </div>   
+    </>
+  )
+}
   export default Recipe_file_submit_row

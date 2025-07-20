@@ -12,7 +12,7 @@ function Recipe_name_field(props) {
         <>
             <div className="Recipe_name_row">
                 <Generic_label  text="Name" style_definition={styler} class="nametag_label" />
-                <input name="myInput" className="Recipe_name_label" onChange={(e)=>{props.setName(e.target.value)}} value={props.name} required />
+                <input name="myInput" className="Recipe_name_label" onChange={(e)=>{props.setName(e.target.value)}} value={props.name} required maxLength={30}/>
             </div>
         </>
     )

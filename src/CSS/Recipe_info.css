@@ -4,7 +4,7 @@
     background-color: #FFFFFF;
     box-shadow: 1.6px 3.2px 3.2px hsl(0deg 0% 0% / 0.45);
     position: relative;
-    top: 5vh;
+    margin-top: 4vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 110px;
@@ -38,7 +38,7 @@ flex-direction: column;
     margin: auto;
     height: 8.5vh;
     line-height: 1.0;
-    font-size: 8vh;
+    font-size: 7vh;
     text-align: center;
     overflow: scroll;
 }
@@ -76,4 +76,90 @@ h1 {
 }
 .ingredients_row {
     width: 90%;
+}
+.Recipe_info_label_unit
+{
+    width: max(5vw,80px) !important;
+}
+.Recipe_info_label_name
+{
+    width: max(9vw,150px) !important;
+}
+.Recipe_info_label_count
+{
+    width: max(5vw,60px) !important;
+}
+
+.Serving_coat {
+    width: 300px;
+    margin: auto;
+    margin-top: 3%;
+}
+.Serving_inmput {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+.Unpublish {
+  background-color: #f44336; /* Green */
+  border: none;
+  color: white;
+  padding: 18px 36px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  
+}
+.Publish {
+  background-color: #04AA6D; 
+  border: none;
+  color: white;
+  padding: 18px 36px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+}
+@media only screen and (max-width: 1600px) {
+    label {
+        font-size: small !important;
+    }
+    .recipe_info_coat {
+        width: 80%;
+    }
+
+}
+@media only screen and (max-width: 1200px) {
+    .recipe_info_coat {
+        width: 90%;
+    }
+    label {
+        padding: 16px !important;
+        margin-left: 10px !important;
+    }
+    .button_is_it_ready {
+        width: 38px !important;
+        height: 38px !important;
+        margin-left: 10px !important;
+    }
+
+}
+@media only screen and (max-width: 1040px) {
+.recipe_info_coat {
+    display: block;
+}
+.Process_main_div{
+margin: auto;
+margin-top: 5%;
+}
+.recipe_info_coat {
+    height: 160vh;
+}
+
 }

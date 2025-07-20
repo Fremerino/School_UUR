@@ -50,9 +50,9 @@ function Recipe_ingredients(props) {
     for (let i = 0; i < props.ingredience.length; i++) {
         colorItems.push(
             <div className="ingredients_row">   
-              <Generic_label style_definition={first_collumn} text={props.ingredience[i].NAME}> </Generic_label> 
-              <Generic_label style_definition={second_collumn} text={props.ingredience[i].COUNT} > </Generic_label> 
-              <Generic_label style_definition={third_collumn} text={props.ingredience[i].UNIT} >  </Generic_label> 
+              <Generic_label style_definition={first_collumn} text={props.ingredience[i].NAME} class="Recipe_info_label_name"> </Generic_label> 
+              <Generic_label style_definition={second_collumn} text={props.ingredience[i].COUNT} class="Recipe_info_label_count"> </Generic_label> 
+              <Generic_label style_definition={third_collumn} text={props.ingredience[i].UNIT} class="Recipe_info_label_unit">  </Generic_label> 
               <Recipe_info_check_button></Recipe_info_check_button>
             </div>
         );

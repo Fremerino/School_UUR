@@ -4,17 +4,16 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-// Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "uur";
+$servername = "bsdsghpsfjuwwm24cxeo-mysql.services.clever-cloud.com";
+$username = "usj85unhcp8r8uqi";
+$password = "Kf3AxEqyt2bsNQQvl0Mi";
+$dbname = "bsdsghpsfjuwwm24cxeo";
 
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
@@ -25,21 +24,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $process = $_POST['Process'];
     $time = $_POST['Time'];
     $ID = $_POST['ID'];
+    $Public = 0;
     $ingredients = json_decode($_POST['Ingredients'], true);
 
     
     $imageData = file_get_contents($_FILES["Image"]["tmp_name"]);
 
    
-    $stmt = $conn->prepare("INSERT INTO recepty (NAME, IMAGE, TEXT, TIMER, ID_PERSON) 
-                            VALUES (:name, :image, :text, :timer, :id)");
+    $stmt = $conn->prepare("INSERT INTO recepty (NAME, IMAGE, TEXT, TIMER, ID_PERSON, Public) 
+                            VALUES (:name, :image, :text, :timer, :id,:Public)");
 
     $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':image', $imageData, PDO::PARAM_LOB); // <- BLOB
+    $stmt->bindParam(':image', $imageData, PDO::PARAM_LOB); 
     $stmt->bindParam(':text', $process);
     $stmt->bindParam(':timer', $time);
     $stmt->bindParam(':id', $ID);
-
+    $stmt->bindParam(':Public',$Public);
     $stmt->execute();
     $lastID = $conn->lastInsertId();
 
@@ -54,11 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmtIng->execute();
     }
 
-    echo json_encode(["success"]);
+    echo json_encode(["Success"]);
 }
-
-
-
-
+  $conn = null;
 
 ?>

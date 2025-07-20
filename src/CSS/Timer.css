@@ -27,3 +27,38 @@
 .Timer_button_pause:hover {
     background-color: #f82d2d;
 }
+.MuiBox-root {
+    margin: auto !important;
+    margin-top: 4vh !important;
+}
+.Timer_input.paused {
+    color: red;
+}
+.Timer_input.active  {
+    color: green;
+}
+.Time_elapsed.paused {
+    color: red;
+}
+.Time_elapsed.active {
+    color: green;
+}
+.Time_elapsed {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    padding: 2px !important;
+}
+@media only screen and (max-width: 1300px) {
+    .Timer_button_start {
+
+        font-size: small!important;
+
+    }
+    .Timer_button_pause {
+
+        font-size: small !important;
+
+    } 
+}
+

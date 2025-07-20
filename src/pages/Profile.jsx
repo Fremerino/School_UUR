@@ -1,4 +1,4 @@
-import Header from "../Components/Header"
+import Header from "../Components/Header_components/Header.jsx"
 import Profile_img from "../Components/Profile_components/Profile_img.jsx"
 import "../CSS/Profile.css"
 import Profile_form from "../Components/Profile_components/Profile_form.jsx"

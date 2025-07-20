@@ -32,14 +32,12 @@ function Register_form(props) {
                     },
                     body: JSON.stringify(data),
                 });
-            
-                if (!response.ok) {
-                    throw new Error('Nastala chyba při odesílání dat');
-                }
-            
+
                 const result = await response.json();
-                console.log('Úspěch:', result);
-                alert('Data byla úspěšně odeslána!');
+                props.Message(result[0]);
+                props.set_pop_up(true);
+                
+                
             } catch (error) {
                 console.error('Chyba:', error);
                 alert('Došlo k chybě při odesílání dat.');
@@ -49,6 +47,7 @@ function Register_form(props) {
     };
 
     return (
+        <>
         <form className="register-form" onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -56,7 +55,8 @@ function Register_form(props) {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Email"
+                    placeholder="Name"
+                    maxLength={8}
                     required
                 />
                 <br/> 
@@ -67,6 +67,7 @@ function Register_form(props) {
                     value={formData.password}
                     onChange={handleChange}
                     placeholder="Password"
+                    maxLength={15}
                     required
                 />
             <br/> 
@@ -74,6 +75,8 @@ function Register_form(props) {
                 Register
             </button>
         </form>
+      
+        </>
     );
 }
 

@@ -5,12 +5,13 @@ function Login_form(props) {
         name_login: "",
         password_login: ""
     });
+    
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData_login(prev => ({
             ...prev,
-            [name]: value
+            [name]: value 
         }));
         
     };
@@ -39,13 +40,19 @@ function Login_form(props) {
                 }
             
                 const result = await response.json();
-                console.log('Úspěch:');
                 
-                Cookies.set('ID', result[0], { expires: 7 });
-                Cookies.set('NAME', result[1], { expires: 7 });
-                alert("přihlášen");
-                props.Name_set(result[1]);
-
+                if(!(result == "Wrong password or username" ||  result =="error"))
+                {
+                    props.Message("Succes!");
+                    Cookies.set('ID', result[0], { expires: 7 });
+                    Cookies.set('NAME', result[1], { expires: 7 });
+                    props.Name_set(result[1]);
+                }
+                else 
+                {
+                    props.Message(result[0]);
+                }
+                props.set_pop_up(true);
             } catch (error) {
                 console.error('Chyba:', error);
                 alert('Došlo k chybě při odesílání dat.');
@@ -55,6 +62,7 @@ function Login_form(props) {
     };
 
     return (
+     <> 
         <form className="login-form" onSubmit={handleSubmit}>
         
                 <input
@@ -64,6 +72,7 @@ function Login_form(props) {
                     value={formData_login.name_login}
                     onChange={handleChange}
                     placeholder="Name"
+                    maxLength={8}
                     required
                 />
                 <br/> 
@@ -75,6 +84,7 @@ function Login_form(props) {
                     value={formData_login.password_login}
                     onChange={handleChange}
                     placeholder="Password"
+                    maxLength={15}
                     required
                 />
                 <br/> 
@@ -83,6 +93,7 @@ function Login_form(props) {
                 Login
             </button>
         </form>
+       </>
     );
 }
 

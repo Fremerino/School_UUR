@@ -8,7 +8,7 @@ function Timer_box(props) {
 
 
 
-    const [Timers, setTimers] = useState([<Grid size={2}> <Timer/> </Grid>,<Grid size={2}> <Timer/> </Grid>,<Grid size={2}> <Timer/> </Grid>,<Grid size={2}> <Timer/> </Grid>]);
+    const [Timers, setTimers] = useState([<Grid size={{xs:4 , lg:2}} className="TimerCoat"> <Timer/> </Grid>,<Grid size={{xs:4 , lg:2}}> <Timer/> </Grid>,<Grid size={{xs:4 , lg:2}}> <Timer/> </Grid>,<Grid size={{xs:4 , lg:2}}> <Timer/> </Grid>]);
     
     
     return (

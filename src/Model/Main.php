@@ -3,10 +3,10 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "uur";
+$servername = "bsdsghpsfjuwwm24cxeo-mysql.services.clever-cloud.com";
+$username = "usj85unhcp8r8uqi";
+$password = "Kf3AxEqyt2bsNQQvl0Mi";
+$dbname = "bsdsghpsfjuwwm24cxeo";
 
 $Data_response = array();
 // Create connection
@@ -16,7 +16,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT ID, NAME, Image, TEXT, TIMER, ID_PERSON FROM recepty";
+$sql = "SELECT ID, NAME, Image, TEXT, TIMER, ID_PERSON, Public FROM recepty";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

@@ -3,14 +3,14 @@ header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
-// Enable error reporting for debugging
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "uur";
+$servername = "bsdsghpsfjuwwm24cxeo-mysql.services.clever-cloud.com";
+$username = "usj85unhcp8r8uqi";
+$password = "Kf3AxEqyt2bsNQQvl0Mi";
+$dbname = "bsdsghpsfjuwwm24cxeo";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,7 +24,7 @@ $Data_response = array();
 
 
 
-$sql = "SELECT ID, NAME, PASSWORD FROM PEOPLE WHERE NAME = '{$name}' AND PASSWORD = '{$password}'";
+$sql = "SELECT ID, NAME, PASSWORD FROM people WHERE NAME = '{$name}' AND PASSWORD = '{$password}'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
   echo json_encode([$row["ID"], $row["NAME"]]);
 }
 else {
-  echo json_encode(["error"]);
+  echo json_encode(["Wrong password or username"]);
 }
 $conn->close();
 
